@@ -1,5 +1,5 @@
 /**
- * Users.js
+ * Users_Info.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -12,28 +12,29 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-    email: {
+    cohort: {
       type: 'string',
       required: true,
-      unique: true,
-      isEmail: true
     },
-    user:{
+    name:{
+      type: 'string',
+      required: true,
+    },
+    last_name:{
+      type: 'string',
+      required: true
+    },
+    country:{
+      type: 'string',
+      required: true
+    },
+    register_date:{
+      type: 'string',
+      required: true
+    },
+    last_connection:{
       type: 'string'
     },
-    password: {
-      required: true,
-      type: 'string',
-      minLength: 8
-    },
-    admin: {
-      type: 'boolean',
-      defaultsTo: false
-    },
-    active:{
-      type: 'boolean',
-      defaultsTo: true
-    }
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
@@ -43,7 +44,10 @@ module.exports = {
     //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
     //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
     //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-    
+    user:{
+      model: 'Users',
+      unique: true
+    }
   },
 
 };

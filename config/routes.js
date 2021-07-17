@@ -11,5 +11,6 @@
 module.exports.routes = {
   // RUTAS DE USUARIOS
   "POST /users/signup": "UsersController.signup",
-  "POST /users/login": "UsersController.login"
+  "POST /users/login": "UsersController.login",
+  "POST /users_info": "UsersinfoController.create"
 };

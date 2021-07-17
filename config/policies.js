@@ -9,7 +9,9 @@
  */
 
 module.exports.policies = {
-
+  UsersinfoController: {
+    '*': 'isLoggedIn'
+  }
   /***************************************************************************
   *                                                                          *
   * Default policy for all controllers and actions, unless overridden.       *

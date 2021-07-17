@@ -23,7 +23,7 @@ module.exports = {
       const user = await Users.create({email, password: hashedPassword}).fetch()
       return res.ok(user)
     }catch(err){
-      return res.serverError({err: err.message}).json();
+      return res.serverError({err}).json();
     }
   },
   login: async function(req, res){
