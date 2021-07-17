@@ -11,6 +11,9 @@
 module.exports.policies = {
   UsersinfoController: {
     '*': 'isLoggedIn'
+  },
+  VerticalController:{
+    '*': 'isLoggedIn'
   }
   /***************************************************************************
   *                                                                          *
