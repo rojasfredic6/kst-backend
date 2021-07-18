@@ -14,6 +14,9 @@ module.exports.policies = {
   },
   VerticalController:{
     '*': 'isLoggedIn'
+  },
+  KSTController:{
+    '*': 'isLoggedIn'
   }
   /***************************************************************************
   *                                                                          *

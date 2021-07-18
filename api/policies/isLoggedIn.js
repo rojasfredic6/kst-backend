@@ -13,7 +13,6 @@ module.exports = async (req, res, next) =>{
   if(!user){
     return next({err: 'Unauthorized'})
   }
-
   req.user = user.id;
   next()
 }
