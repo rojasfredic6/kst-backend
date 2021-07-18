@@ -13,13 +13,13 @@ module.exports = {
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
 
-    level: { type: 'string' },
+    level: { type: 'string', required:true },
 
-    milestone: { type: 'string' },
+    milestone: { type: 'string', required:true},
 
-    mastery: { type: 'string' },
+    mastery: { type: 'string', required:true },
 
-    mastery_level: { type: 'string' },
+    mastery_level: { type: 'string', required:true },
 
     student_interview: { type: 'string' },
 
