@@ -13,10 +13,19 @@ module.exports.policies = {
     '*': 'isLoggedIn'
   },
   VerticalController:{
-    '*': 'isLoggedIn'
+    '*': 'isAdmin'
   },
   KSTController:{
     '*': 'isLoggedIn'
+  },
+  QuestionnaireController:{
+    '*': 'isAdmin'
+  },
+  QuestionController:{
+    '*': 'isAdmin'
+  },
+  UsersController:{
+    'Update': 'isAdmin'
   }
   /***************************************************************************
   *                                                                          *

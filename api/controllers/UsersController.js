@@ -29,7 +29,21 @@ module.exports = {
   login: async function(req, res){
     try{
       const { email, password } = await req.allParams();
-      const user = await Users.findOne({email});
+      const user = await Users.findOne({email, active: true, admin: false});
+      if(!user){
+        return res.notFound({err: 'User not Found'})
+      }
+      const comparedPassword = await bcrypt.compare(password, user.password);
+      const token = AuthenticationService.JWTIssuer({user: user.id}, '1 day')
+      return (comparedPassword) ? res.ok({token}) : res.badRequest({err: 'Unauthorized'})
+    }catch(err){
+      return res.serverError()
+    }
+  },
+  admin: async function(req,res){
+    try{
+      const { email, password } = await req.allParams();
+      const user = await Users.findOne({email, admin: true});
       if(!user){
         return res.notFound({err: 'User not Found'})
       }
