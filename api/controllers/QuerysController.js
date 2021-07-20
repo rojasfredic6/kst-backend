@@ -44,9 +44,29 @@ module.exports = {
    * `QuerysController.userResults()`
    */
   userResults: async function (req, res) {
-    return res.json({
-      todo: 'userResults() is not implemented yet!'
-    });
+    try{
+      const { kstId } = req.query;
+      const kstResults = await Result.find({ kst: kstId })
+      if(!kstResults){
+        return res.badRequest('The are no results asocieted to this kst')
+      }
+      return res.ok(kstResults)
+    }catch(err){
+      return res.serverError({err})
+    }
+  },
+
+  getQuestionnaire: async (req, res) =>{
+    try{
+      const { verticalId } = res.query;
+      const questionnaire = await Questionnaire.findOne({ vertical: verticalId })
+      if(!questionnaire){
+        return res.badRequest('There is not such a questionnaire like that')
+      }
+      return res.ok(questionnaire);
+    } catch(err){
+      return res.serverError({err})
+    }
   }
 
 };

@@ -26,6 +26,9 @@ module.exports.policies = {
   },
   UsersController:{
     'Update': 'isAdmin'
+  },
+  QuerysController:{
+    '*': 'isLoggedIn'
   }
   /***************************************************************************
   *                                                                          *
