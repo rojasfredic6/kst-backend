@@ -65,6 +65,17 @@ module.exports = {
     } catch(err){
       return res.serverError({err})
     }
+  },
+  getVerticals: async(req, res) =>{
+    try{
+      const verticales = await Vertical.find({})
+      if(!verticales){
+        return res.badRequest('The are not verticals added')
+      }
+      return res.ok(verticales)
+    }catch(err){
+      return res.serverError({err})
+    }
   }
 
 };

@@ -17,5 +17,6 @@ module.exports.routes = {
   "GET /user_info": "QuerysController.userInfo",
   "GET /user_kst": "QuerysController.userKST",
   "GET /kst_results": "QuerysController.userResults",
-  "GET /questionnaire": "QuerysController.getQuestionnaire"
+  "GET /questionnaire": "QuerysController.getQuestionnaire",
+  "GET /verticals": "QuerysController.getVerticals"
 };
