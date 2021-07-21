@@ -12,7 +12,6 @@ module.exports = {
   create: async (req, res) =>{
     try{
       let params = req.allParams();
-      console.log(params)
       const info = await Users_Info.create(
         {
           cohort: params.cohort,
@@ -24,7 +23,6 @@ module.exports = {
           user: req.user
         }
       ).fetch();
-      console.log(info)
       return res.ok(info);
     }catch(err){
       return res.serverError({err})

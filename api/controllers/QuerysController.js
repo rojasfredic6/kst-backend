@@ -13,8 +13,7 @@ module.exports = {
    */
   userInfo: async function (req, res) {
     try{
-      const { userId } = req.query;
-      const userInfo = await Users_Info.findOne({ user: userId })
+      const userInfo = await Users_Info.findOne({ user: req.user })
       if(!userInfo){
         return res.badRequest('Not Found')
       }
@@ -29,8 +28,7 @@ module.exports = {
    */
   userKST: async function (req, res) {
     try{
-      const {userId} = req.query;
-      const userKst = await KST.find({ user: userId })
+      const userKst = await KST.find({ user: req.user })
       if(!userKst){
         return res.badRequest("There are not kst's available")
       }
