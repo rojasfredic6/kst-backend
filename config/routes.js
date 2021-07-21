@@ -16,6 +16,6 @@ module.exports.routes = {
   "POST /users_info": "UsersinfoController.create",
   "GET /user_info": "QuerysController.userInfo",
   "GET /user_kst": "QuerysController.userKST",
-  "GET /kst_results": "QuerysController.userResultsuser",
+  "GET /kst_results": "QuerysController.userResults",
   "GET /questionnaire": "QuerysController.getQuestionnaire"
 };
