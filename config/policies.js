@@ -28,7 +28,8 @@ module.exports.policies = {
     'Update': 'isAdmin'
   },
   QuerysController:{
-    '*': 'isLoggedIn'
+    '*': 'isLoggedIn',
+    '*': 'isAdmin'
   }
   /***************************************************************************
   *                                                                          *

@@ -22,6 +22,19 @@ module.exports = {
       return res.serverError({err})
     }
   },
+  userInfoAdmin: async (req,res) => {
+  	try{
+  		const params = await req.allParams()
+  		const id = params.id
+  		const userInfo = await Users_Info.find({user: id})
+  		if(!userInfo){
+  			return res.badRequest('Not Found')
+  		}
+  		return res.ok(userInfo)
+  	}catch(err){
+  		return res.serverError({ err })
+  	}
+  },
 
   /**
    * `QuerysController.userKST()`
