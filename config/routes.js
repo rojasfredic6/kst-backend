@@ -15,7 +15,7 @@ module.exports.routes = {
   "POST /users/admin": "UsersController.admin",
   "POST /users_info": "UsersinfoController.create",
   "GET /user_info": "QuerysController.userInfo",
-  "GET /user_info_admin": "QuerysController.userInfoAdmin",
+  "POST /user_info_admin": "QuerysController.userInfoAdmin",
   "GET /user_kst": "QuerysController.userKST",
   "GET /kst_results": "QuerysController.userResults",
   "GET /questionnaire": "QuerysController.getQuestionnaire",
