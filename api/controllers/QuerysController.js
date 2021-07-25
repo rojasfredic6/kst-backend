@@ -26,7 +26,8 @@ module.exports = {
   	try{
   		const params = await req.allParams()
   		const id = params.id
-  		const userInfo = await Users_Info.find({user: id})
+  		console.log(id)
+  		const userInfo = await Users_Info.findOne({user: id})
   		if(!userInfo){
   			return res.badRequest('Not Found')
   		}
