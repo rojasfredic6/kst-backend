@@ -19,9 +19,7 @@ module.exports = {
 
     mastery: { type: 'string', required:true },
 
-    mastery_level: { type: 'string', required:true },
-
-    student_interview: { type: 'string' },
+    knowledge_Skill_Techonology: { type: 'string', required:true },
 
     //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
     //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
